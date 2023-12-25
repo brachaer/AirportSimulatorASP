@@ -1,0 +1,98 @@
+﻿@using AirportSimulator.Services.ModelsDTO;
+@model IEnumerable<StationDTO>;
+
+<div class="airport-map align-content-center">
+    <div class="airport-container ">
+        <h3>Airport Map</h3>
+
+        <div class="row ">
+            @foreach (var station in Model.Where(s => s.Id == 9))
+            {
+                <div class="col station final-station  @(station.Plane?.Status.ToString().ToLower()) @(station.IsOccupied ? "occupied " : "")">
+                    @station.Id 
+                    @if (station.IsOccupied)
+                    {
+                        <p class=" @(station.Plane?.Status.ToString().ToLower())">@station.Plane?.FlightNumber.ToString()</p>
+                        if (station.Plane?.Status.ToString() == "Landing")
+                        {
+                            <img src="~/Images/airplaneLanding.png" alt="Plane" class="plane-image " />
+                        }
+                        else
+                        {
+                            <img src="~/Images/airplaneTO.png" alt="Plane" class="plane-image " />
+                        }
+                    }
+                </div>
+            }
+        </div>
+        <div class="row">
+            @for (var i = 4; i >= 1; i--)
+            {
+                var station = Model.FirstOrDefault(s => s.Id == i);
+                <div class="col station  @(station?.Plane?.Status.ToString().ToLower()) @(station?.IsOccupied == true ? "occupied" : "")">
+                    @station?.Id
+                    @if (station?.IsOccupied == true)
+                    {
+                        <p class="@(station.Plane?.Status.ToString().ToLower())">@station.Plane?.FlightNumber.ToString()</p>
+                        if (station.Plane?.Status.ToString() == "Landing")
+                        {
+                            <img src="~/Images/airplaneLanding.png" alt="Plane" class="plane-image " />
+                        }
+                        else
+                        {
+                            <img src="~/Images/airplaneTO.png" alt="Plane" class="plane-image " />
+                        }
+                    }
+                </div>
+            }
+        </div>
+        <div class="row">
+            @foreach (var station in Model.Where(s => s.Id == 5 || s.Id == 8))
+            {
+                <div class="col station  @(station.Plane?.Status.ToString().ToLower()) @(station.IsOccupied ? "occupied" : "")">
+                    @station.Id
+                    @if (station.IsOccupied)
+                    {
+                        <p class=" @(station.Plane?.Status.ToString().ToLower())">@station.Plane?.FlightNumber.ToString()</p>
+                        if (station.Plane?.Status.ToString() == "Landing")
+                        {
+                            <img src="~/Images/airplaneLanding.png" alt="Plane" class="plane-image " />
+                        }
+                        else
+                        {
+                            <img src="~/Images/airplaneTO.png" alt="Plane" class="plane-image " />
+                        }
+                    }
+                </div>
+               
+                @if (station.Id == 5)
+                {
+                    <div class="col mx-2"></div>
+                    <div class="col mx-2"></div>
+                }
+            }
+        </div>
+        <div class="row">
+            @foreach (var station in Model.Where(s => s.Id == 6 || s.Id == 7))
+            {
+                <div class="col station final-station @(station.Plane?.Status.ToString().ToLower()) @(station.IsOccupied ? "occupied" : "")">
+                    @station.Id
+                    @if (station.IsOccupied)
+                    {
+                        <p class=" @(station.Plane?.Status.ToString().ToLower())">@station.Plane?.FlightNumber.ToString()</p>
+                        if (station.Plane?.Status.ToString()=="Landing")
+                        {
+                            <img src="~/Images/airplaneLanding.png" alt="Plane" class="plane-image " />
+                        }
+                        else
+                        {
+                            <img src="~/Images/airplaneTO.png" alt="Plane" class="plane-image " />
+                        }
+                    }
+                </div>
+            }
+        </div>
+    </div>
+</div>
+
+

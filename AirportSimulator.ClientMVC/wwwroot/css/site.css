@@ -1,0 +1,76 @@
+html {
+    font-size: 14px;
+    position: relative;
+    min-height: 100%;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+body {
+  margin-bottom: 60px;
+}
+
+.airport-map {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.station {
+    width: 120px;
+    height: 120px;
+    border: 1px solid #000;
+    margin: 5px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    font-weight: bold;
+}
+.final-station{
+    border:double;
+    border-width:thick;
+}
+.airport-container {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+
+.row {
+    display: flex;
+    justify-content: space-between;
+}
+
+.occupied {
+    background-color:lightskyblue;
+}
+
+.plane-image {
+    position: absolute;
+    z-index: 1; 
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50px;
+    height: 50px;
+}
+
+.station p {
+    top:5%;
+    position: absolute;
+    z-index: 2;
+}
+
+.landing{
+    color:green;
+    background-color:lightgreen;
+}
+
+.takingoff{
+    color:red;
+    background-color:lightpink;
+}
