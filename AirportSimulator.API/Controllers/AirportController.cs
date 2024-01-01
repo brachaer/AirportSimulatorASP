@@ -16,33 +16,18 @@ namespace AirportSimulator.API.Controllers
         }
 
         [HttpGet]
-        public async Task<Airport> GetAirport()
+        public async Task<Airport> GetAirportCurrentStatus()
         {
             var airport = await _airportLogic.Get();
             return airport;
         }
 
         [HttpGet("hub")]
-        public async Task<ActionResult> GetHub()
+        public async Task<ActionResult> SimulateAirportLogicRealTime()
         {
             await _airportLogic.DoLogic();
             return Ok();
         }
 
-        [HttpPost]
-        public async Task<ActionResult> EnterAirport()
-        {
-            var airport = await _airportLogic.Get();
-            await _airportLogic.NewEntry(airport);
-            return Ok(airport);
-        }
-
-        [HttpPut]
-        public async Task<Airport> DoLogic()
-        {
-            var airport = await _airportLogic.DoLogic();
-
-            return airport;
-        }
     }
 }

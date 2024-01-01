@@ -17,14 +17,14 @@ namespace AirportSimulator.ClientMVC.Controllers
         [HttpGet]
         public async Task<IActionResult> Index()
         {
-            var airportDTO = await _airportService.GetAirport();
+            var airportDTO = await _airportService.GetAirportStatus();
             return View(airportDTO);
         }
 
         [HttpGet]
         public async Task<IActionResult> UpdateData()
         {
-            await _airportService.GetHubAirport();
+            await _airportService.SimulateRealTimeAirport();
 
             return Ok();
         }

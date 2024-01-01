@@ -6,7 +6,7 @@ namespace AirportSimulator.Services
     public class DataService
     {
         protected HttpClient client = new() { BaseAddress = new Uri("https://localhost:7129") };
-        public async Task GetHub(ControllerType controller) =>
+        public async Task SimulateRealTime(ControllerType controller) =>
             await client.GetAsync($"api/{controller.ToString()}/hub");
         public async Task<T> GetData<T>(ControllerType controller) =>
             await client.GetFromJsonAsync<T>($"api/{controller.ToString()}");

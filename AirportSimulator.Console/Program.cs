@@ -1,10 +1,12 @@
 ﻿using AirportSimulator.Services;
 using AirportSimulator.Services.ModelsDTO;
 
-DataService service = new AirportService();
+AirportService service = new AirportService();
 bool stop = false;
-Console.WriteLine("Airport Simulator:");
-var airport = await service.GetData<AirportDTO>(ControllerType.Airport);
+Console.WriteLine("Welcome Airport Simulator");
+Console.WriteLine("Current Airport Status : ");
+
+var airport = await service.GetAirportStatus();
 if (airport != null)
 {
     var planes = airport.Planes.ToList();
@@ -28,7 +30,7 @@ while (!stop)
         stop = true;
         break;
     }
-    await service.GetHub(ControllerType.Airport);
+    await service.SimulateRealTimeAirport();
     airport = await service.GetData<AirportDTO>(ControllerType.Airport);
     if (airport != null)
     {
