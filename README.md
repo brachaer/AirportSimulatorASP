@@ -1,5 +1,6 @@
 # Airport Simulator : ASP .NET Core API (Backend) MVC (Frontend)
-![Screenshot 2024-01-14 123841](https://github.com/brachaer/AirportSimulatorASP/assets/145331020/2d0e6433-0486-4473-9514-993d07f50f91)
+
+[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/JEfMKsV3QGQ/0.jpg)](https://www.youtube.com/watch?v=JEfMKsV3QGQ)
 
 I had the opportunity to contribute to the development of an Airport Simulator project, a dynamic and interactive application designed to simulate airport operations. The project leveraged a diverse set of technologies and methodologies to create a realistic and engaging user experience.
 ### Key Technologies:
